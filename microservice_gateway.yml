@@ -1,0 +1,12 @@
+server:
+  port: 9000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: microservice_back
+        uri: http://localhost:9001
+        predicates: Path=/patient/**
+        filters:
+          - PrefixPath=/microservice_back/v1
