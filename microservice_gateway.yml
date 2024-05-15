@@ -10,3 +10,9 @@ spring:
         predicates: Path=/patient/**
         filters:
           - PrefixPath=/microservice_back/v1
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        issuer-uri: http://localhost:8080/realms/Medilabo-Solutions-realm
