@@ -11,8 +11,8 @@ spring:
         filters:
           - PrefixPath=/microservice_back/v1
 
-security:
-  oauth2:
-    resource:
-      jwt:
-        jwk-set-uri: http://localhost:8080/realms/Medilabo-Solutions-realm
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/Medilabo-Solutions-realm
