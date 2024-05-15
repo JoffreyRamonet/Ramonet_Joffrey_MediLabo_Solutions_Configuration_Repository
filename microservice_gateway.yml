@@ -15,4 +15,4 @@ security:
   oauth2:
     resource:
       jwt:
-        issuer-uri: http://localhost:8080/realms/Medilabo-Solutions-realm
+        jwk-set-uri: http://localhost:8080/realms/Medilabo-Solutions-realm
