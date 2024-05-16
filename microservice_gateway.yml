@@ -10,9 +10,14 @@ spring:
         predicates: Path=/patient/**
         filters:
           - PrefixPath=/microservice_back/v1
-
   security:
     oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8080/realms/Medilabo-Solutions-realm
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/auth/realms/Medilabo-Solutions-realm
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: gateway
+            client-secret: VSoxAhJrROMvJK54NmxQt5VHwJYlzTkY
