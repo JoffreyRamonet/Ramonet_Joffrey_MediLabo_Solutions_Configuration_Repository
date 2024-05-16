@@ -4,6 +4,8 @@ server:
 spring:
   cloud:
     gateway:
+      default-filters:
+      - TokenRelay
       routes:
       - id: microservice_back
         uri: http://localhost:9001
