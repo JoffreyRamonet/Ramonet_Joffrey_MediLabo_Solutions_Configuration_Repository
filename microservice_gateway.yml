@@ -4,27 +4,18 @@ server:
 spring:
   cloud:
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Controle-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
       globalcors:
         cors-configurations:
           '[/**]':
             allowedOrigins: "https:localhost:4200"
-            allowedMethods:
-            - GET
-            - POST
-            - PATCH
-            - DELETE
+            allowedMethods: "*"
+            
       routes:
       - id: microservice_back
         uri: http://localhost:9001
         predicates: Path=/patient/**
         filters:
           - PrefixPath=/microservice_back/v1
-# security:
-#   oauth2:
-#     client:
-#       registration:
-#         gateway:
-#           client-id: gateway
-#           client-secret: VSoxAhJrROMvJK54NmxQt5VHwJYlzTkY
-#           authorization-grant-type: authorization_code
-#           redirect-uri: http://localhost:4200/
+
