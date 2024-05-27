@@ -9,8 +9,10 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: "https:localhost:4200"
-            allowedMethods: "*"
+            allowed-Origins: "https:localhost:4200"
+            allowed-Methods: "*"
+            allowed-headers: "*"
+            allow-credentials: true
             
       routes:
       - id: microservice_back
