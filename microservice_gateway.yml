@@ -4,13 +4,13 @@ server:
 spring:
   cloud:
     gateway:
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowed-Origins: "https:localhost:4200"
-            allowed-Methods: "*"
-            # allowed-headers: "*"
-            # allow-credentials: true
+      # globalcors:
+      #   cors-configurations:
+      #     '[/**]':
+      #       allowed-Origins: "https:localhost:4200"
+      #       allowed-Methods: "*"
+      #       # allowed-headers: "*"
+      #       # allow-credentials: true
             
       routes:
       - id: microservice_back
