@@ -10,7 +10,7 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowed-Origins: "https:localhost:4200, https:microservice-front:4200"
+            allowed-Origins: "https:localhost:4200, https:microservice-front:4200, http:localhost:4200, http:microservice-front:4200"
             allowedHeaders:
               - Content-Type
             allowedMethods:
