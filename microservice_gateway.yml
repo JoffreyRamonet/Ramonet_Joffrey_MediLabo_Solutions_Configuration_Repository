@@ -11,6 +11,7 @@ spring:
         cors-configurations:
           '[/**]':
             allowed-Origins: "https:localhost:4200"
+            allowed-Origins: "https:microservice-front:4200"
             allowedHeaders:
               - Content-Type
             allowedMethods:
