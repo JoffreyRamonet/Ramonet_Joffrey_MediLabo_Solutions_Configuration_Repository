@@ -10,7 +10,7 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowed-Origins: "https:localhost:4200, https:microservice-front:4200, http:localhost:4200, http:microservice-front:4200"
+            allowed-Origins: "https:localhost:4200, https:microservice-front:4200"
             allowedHeaders:
               - Content-Type
             allowedMethods:
@@ -18,11 +18,16 @@ spring:
               - POST
               - PUT
               - DELETE
+              - PATCH
             
       routes:
-      - id: microservice_back
+      - id: microservice_backend_patient
         uri: http://localhost:9001
         predicates: Path=/patient/**
         filters:
-          - PrefixPath=/microservice_back/v1
-
+          - PrefixPath=/microservice_backend_patient/v1
+      - id: microservice_backend_note
+        uri: http://localhost:9003
+        predicates: Path=/note/**
+        filters:
+          - PrefixPath=/microservice_backend_note/v1
