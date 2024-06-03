@@ -35,9 +35,9 @@ spring:
         uri: http://localhost:9004
         predicates: Path=/accessor/**
         filters:
-          - PrefixPath=/microservice_backend_accessor/v1/accessor
+          - PrefixPath=/microservice_backend_accessor/v1
       - id: microservice_backend_accessor_trigger
         uri: http://localhost:9004
         predicates: Path=/trigger/**
         filters:
-          - PrefixPath=/microservice_backend_accessor/v1/trigger
+          - PrefixPath=/microservice_backend_accessor/v1
