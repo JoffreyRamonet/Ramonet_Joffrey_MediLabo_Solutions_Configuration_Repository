@@ -33,7 +33,7 @@ spring:
           - PrefixPath=/microservice_backend_note/v1
       - id: microservice_backend_assessor_assessor
         uri: http://localhost:9004
-        predicates:  Path=/accessor/**
+        predicates:  Path=/assessor/**
         filters:
           - PrefixPath=/microservice_backend_assessor/v1
       - id: microservice_backend_assessor_trigger
