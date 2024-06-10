@@ -23,7 +23,7 @@ spring:
       routes:
       - id: microservice_backend_patient
       #  uri: http://localhost:9001
-        uri: http://microservice-backend-patient
+        uri: lb://microservice-backend-patient
         predicates: Path=/patient/**
         filters:
           - PrefixPath=/microservice_backend_patient/v1
