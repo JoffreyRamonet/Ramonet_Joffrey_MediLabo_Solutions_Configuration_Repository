@@ -4,40 +4,24 @@ server:
 spring:
   cloud:
     gateway:
-      default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-        - AddResponseHeader=Access-Control-Allow-Origin, *
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowed-Origins: "https:localhost:4200, https:microservice-front:4200"
-            allowedHeaders:
-              - Content-Type
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - PATCH
-            
       routes:
       - id: microservice_backend_patient
         uri: lb://microservice-backend-patient
         predicates: Path=/patient/**
         filters:
           - PrefixPath=/microservice_backend_patient/v1
-  #    - id: microservice_backend_note
-  #      uri: http://localhost:9003
-  #      predicates: Path=/note/**
-  #      filters:
-  #        - PrefixPath=/microservice_backend_note/v1
-  #    - id: microservice_backend_assessor_assessor
-  #      uri: http://localhost:9004
-  #      predicates:  Path=/assessor/**
-  #      filters:
-  #        - PrefixPath=/microservice_backend_assessor/v1
-  #    - id: microservice_backend_assessor_trigger
-  #      uri: http://localhost:9004
-  #      predicates: Path=/trigger/**
-  #      filters:
-  #        - PrefixPath=/microservice_backend_assessor/v1
+      - id: microservice_backend_note
+        uri: lb://microservice-backend-note
+        predicates: Path=/note/**
+        filters:
+          - PrefixPath=/microservice_backend_note/v1
+      - id: microservice_backend_assessor_assessor
+        uri: lb://microservice-backend-assessor
+        predicates:  Path=/assessor/**
+        filters:
+          - PrefixPath=/microservice_backend_assessor/v1
+      - id: microservice_backend_assessor_trigger
+        uri: lb://microservice-backend-assessor
+        predicates: Path=/trigger/**
+        filters:
+          - PrefixPath=/microservice_backend_assessor/v1
