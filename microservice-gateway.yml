@@ -12,12 +12,12 @@ spring:
         predicates: Path=/note/**
         filters:
           - PrefixPath=/microservice-backend-note/v1
-      - id: microservice_backend-assessor-assessor
+      - id: microservice-backend-assessor-assessor
         uri: lb://microservice-backend-assessor
         predicates:  Path=/assessor/**
         filters:
           - PrefixPath=/microservice-backend-assessor/v1
-      - id: microservice_backend-assessor-trigger
+      - id:microservice-backend-assessor-trigger
         uri: lb://microservice-backend-assessor
         predicates: Path=/trigger/**
         filters:
