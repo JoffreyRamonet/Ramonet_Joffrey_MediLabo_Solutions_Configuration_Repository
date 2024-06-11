@@ -2,23 +2,23 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: microservice_backend_patient
+      - id: microservice-backend-patient
         uri: lb://microservice-backend-patient
         predicates: Path=/patient/**
         filters:
-          - PrefixPath=/microservice_backend_patient/v1
-      - id: microservice_backend_note
+          - PrefixPath=/microservice-backend-patient/v1
+      - id: microservice-backend-note
         uri: lb://microservice-backend-note
         predicates: Path=/note/**
         filters:
-          - PrefixPath=/microservice_backend_note/v1
-      - id: microservice_backend_assessor_assessor
+          - PrefixPath=/microservice-backend-note/v1
+      - id: microservice_backend-assessor-assessor
         uri: lb://microservice-backend-assessor
         predicates:  Path=/assessor/**
         filters:
-          - PrefixPath=/microservice_backend_assessor/v1
-      - id: microservice_backend_assessor_trigger
+          - PrefixPath=/microservice-backend-assessor/v1
+      - id: microservice_backend-assessor-trigger
         uri: lb://microservice-backend-assessor
         predicates: Path=/trigger/**
         filters:
-          - PrefixPath=/microservice_backend_assessor/v1
+          - PrefixPath=/microservice-backend-assessor/v1
